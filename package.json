@@ -1,0 +1,21 @@
+{
+  "name": "mylinewebhook",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "@line/bot-sdk": "^6.8.3",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "ibm-watson": "^5.1.0",
+    "mongodb": "^3.3.4",
+    "morgan": "~1.9.1",
+    "nodemon": "^1.19.4",
+    "pug": "2.0.0-beta11",
+    "simple-node-logger": "^18.12.23"
+  }
+}

@@ -1,0 +1,61 @@
+2019-11-19 13:37:04.893 INFO  call watson result: {"output":{"generic":[{"response_type":"text","text":"我不瞭解您的問題。您可以換種方式說明"}],"intents":[],"entities":[]}} 
+2019-11-19 14:18:05.389 INFO  webhook received an event 
+2019-11-19 14:18:05.391 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: ok 
+2019-11-19 14:18:07.931 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:22:45.475 INFO  webhook received an event 
+2019-11-19 14:22:45.475 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我帳號有問題 
+2019-11-19 14:22:46.399 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:27:18.924 INFO  webhook received an event 
+2019-11-19 14:27:18.926 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:27:21.546 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:27:29.626 INFO  webhook received an event 
+2019-11-19 14:27:29.627 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:27:30.473 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:28:07.706 INFO  webhook received an event 
+2019-11-19 14:28:07.707 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:28:09.142 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:28:14.428 INFO  webhook received an event 
+2019-11-19 14:28:14.428 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:28:15.223 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:29:25.235 INFO  webhook received an event 
+2019-11-19 14:29:25.235 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我想吃 
+2019-11-19 14:29:31.932 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:30:34.174 INFO  webhook received an event 
+2019-11-19 14:30:34.174 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 珍珠奶茶半糖少冰 
+2019-11-19 14:30:35.133 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:34:08.902 INFO  webhook received an event 
+2019-11-19 14:34:08.902 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:34:09.780 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:34:23.464 INFO  webhook received an event 
+2019-11-19 14:34:23.464 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:34:24.252 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:46:04.410 INFO  webhook received an event 
+2019-11-19 14:46:04.410 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:46:06.048 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:46:10.089 INFO  webhook received an event 
+2019-11-19 14:46:10.089 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:46:10.969 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:47:42.974 INFO  webhook received an event 
+2019-11-19 14:47:42.974 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我渴了 
+2019-11-19 14:47:43.933 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:48:27.760 INFO  webhook received an event 
+2019-11-19 14:48:27.760 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 半糖去冰 
+2019-11-19 14:48:28.731 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:48:48.015 INFO  webhook received an event 
+2019-11-19 14:48:48.015 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我渴了 
+2019-11-19 14:48:48.926 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:48:54.975 INFO  webhook received an event 
+2019-11-19 14:48:54.976 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我渴了 
+2019-11-19 14:48:55.934 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:50:21.092 INFO  webhook received an event 
+2019-11-19 14:50:21.093 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:50:22.851 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:50:27.543 INFO  webhook received an event 
+2019-11-19 14:50:27.543 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:50:28.482 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: fail to call assistant 
+2019-11-19 14:55:23.069 INFO  webhook received an event 
+2019-11-19 14:55:23.071 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 我餓了 
+2019-11-19 14:55:24.816 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
+2019-11-19 14:55:28.734 INFO  webhook received an event 
+2019-11-19 14:55:28.734 INFO  U4120a641830bb2b35b5af0eeea3d13ad says: 蛋糕 
+2019-11-19 14:55:29.210 INFO  U4120a641830bb2b35b5af0eeea3d13ad return message: [object Object] 
