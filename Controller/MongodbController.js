@@ -17,6 +17,10 @@ class MongodbContoller{
                 else { 
                     console.log('success connect to db');
                     _this.db = db; 
+                    //DB斷線處理
+                    _this.db.on('close',function(){
+                        //...
+                    });
                 }
 
                 resolve(err || 'success');

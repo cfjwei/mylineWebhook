@@ -6,6 +6,9 @@ const AssistantCtl = require('../Controller/AssistantController.js');
 const ChannelAccessKey = configs.channelAccessToken;
 const line = require('@line/bot-sdk');
 
+const MongodbCtl = require('../Controller/MongodbController');
+MongodbCtl.init();
+
 const client = new line.Client({
   channelAccessToken: ChannelAccessKey
 });
@@ -65,6 +68,15 @@ router.post('/line', async function (req, res, next) {
       // 將回覆傳回給user
       replyToLine(targetEvent.replyToken, result);
       logger.log(userId, 'return message:', result);
+
+      //紀錄ＤＢ
+      let document = {
+        timestamp : Date.now(),
+        userId : userId,
+        userSay : userSay,
+        AssistantReturn : result
+      }
+      MongodbCtl.insertOne('LineBot','chatLog',document)
     }
   }
 });
@@ -163,3 +175,14 @@ let logger = {
   }
 }
 logger.init('webhook');
+
+function test(){
+  console.log('start initMongodb');
+  let initMongodb = await MongodbCtl.init(); 
+  console.log('initMongodb:', initMongodb);
+  console.log('start insertResult');
+  let insertResult = await MongodbCtl.insertOne('testDB', 'testCollection', {test: 'test'}); 
+  console.log('insertResult:', insertResult);
+  }
+
+test();
