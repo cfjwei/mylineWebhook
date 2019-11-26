@@ -9,5 +9,6 @@ module.exports = {
         //url:"https://gateway.watsonplatform.net/assistant/api/v2/assistants/3248f01e-8146-41bb-8715-14712ec2bdfd/sessions"
         url: "https://gateway.watsonplatform.net/assistant/api"
     },
-    mongodb: ""
+    mongodb : "mongodb://localhost:27017"
+    //mongodb: "mongodb+srv://BigGG:zse4rfvcx@cluster0-z33ci.mongodb.net/test?retryWrites=true&w=majority"
 }

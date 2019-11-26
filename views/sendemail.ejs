@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="" name="description">
+	<meta content="Dashboard" name="author">
+	<meta content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" name="keyword">
+	<title>demo - email</title><!-- Bootstrap core CSS -->
+	<link href="stylesheets/bootstrap.min.css" rel="stylesheet"><!--external css-->
+	<link href="stylesheets/font-awesome.css" rel="stylesheet"><!-- Custom styles for this template -->
+	<link href="stylesheets/style.css" rel="stylesheet">
+	<link href="stylesheets/style-responsive.css" rel="stylesheet">
+	<link href="stylesheets/table-responsive.css" rel="stylesheet">
+</head>
+<body>
+	<section id="container">
+		<header class="header black-bg">
+			<a class="logo"><b>REPO<span>RT</span> DEMO</b></a> <!--logo end-->
+		</header><!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<h3>Form Validation</h3><!-- FORM VALIDATION -->
+				<div class="row mt">
+					<div class="col-lg-12">
+						<div class="form-panel">
+							<div class=" form">
+								<form action="" class="cmxform form-horizontal style-form" id="commentForm" method="get" name="commentForm">
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="cname">系統 (required)</label>
+										<div class="col-lg-10">
+											<select class="form-control">
+                                                <option>E化系統</option>
+												<option>E化系統</option>
+												<option>人資系統</option>
+												<option>開機帳號</option>
+												<option>EBAO</option>
+												<option>CAPSIL</option>
+												<option>AML</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="cname">帳號 (required)</label>
+										<div class="col-lg-10">
+											<input class=" form-control" id="cname" name="name" required="" type="text">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="cemail">E-Mail (required)</label>
+										<div class="col-lg-10">
+											<input class="form-control" id="cemail" name="email" required="" type="email">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="curl">分機 (optional)</label>
+										<div class="col-lg-10">
+											<input class="form-control" id="curl" name="url" type="url">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-lg-2" for="ccomment">其他建議 (required)</label>
+										<div class="col-lg-10">
+											<textarea class="form-control" id="ccomment" name="comment" required=""></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-lg-offset-2 col-lg-10">
+                                            <button id='send' class="btn btn-theme" type="submit">傳送</button> 
+                                            <button id='cancel' class="btn btn-theme04" type="button">取消</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div><!-- /form-panel -->
+					</div><!-- /col-lg-12 -->
+				</div><!-- /row -->
+			</section><!-- /wrapper -->
+		</section><!--footer end-->
+	</section>
+	<script src="javascripts/jquery.min.js"></script> 
+	<script src="javascripts/bootstrap.min.js"></script> 
+	<script class="include" src="javascripts/jquery.dcjqaccordion.2.7.js" type="text/javascript"></script> 
+	<script src="javascripts/jquery.scrollTo.min.js"></script> 
+	<script src="javascripts/jquery.nicescroll.js" type="text/javascript"></script> <!--common script for all pages-->
+	 
+    <script src="javascripts/common-scripts.js"></script> <!--script for this page-->
+
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="javascripts/liff-starter.js"></script>
+</body>
+</html>

@@ -36,12 +36,27 @@
                     // return JSON.parse(result.output.generic[0].text);
 
                     // 未整理使用這一區
+                    // return {
+                    //     success: true,
+                    //     data:{
+                    //         userSession:userSession,
+                    //         result:result,
+                    //         message:{
+                    //     type: 'text',
+                    //     text: result.output.generic[0].text
+                    //     }
+                    // }};
                     return {
-                        type: 'text',
-                        text: result.output.generic[0].text
+                        userSession: userSession,
+                        result:result.result,
+                        message:JSON.parse(result.result.output.generic[0].text).message
                     };
                 }).catch(() => {
-                    return 'fail to call assistant';
+                    //return 'fail to call assistant';
+                    return {
+                        success : false,
+                        message : 'fail to call assistent'
+                    }
                 });
         }
     }

@@ -14,30 +14,6 @@ const client = new line.Client({
 });
 // logger simple-node-logger
 const SimpleNodeLogger = require('simple-node-logger');
-
-// const MongoClient = require('mongodb').MongoClient;
-
-// //const uri = 'mongodb+srv://rock:rock@clusterrock-ynvoh.gcp.mongodb.net/test?retryWrites=true&w=majority';
-// const uri ='mongodb+srv://BigGG:stevebiggg@cluster0-z33ci.mongodb.net/test?retryWrites=true&w=majority';
-// const Mclient = new MongoClient(uri, { //useNewUrlParser: true 
-//   useUnifiedTopology: true 
-// });
-// Mclient.connect((err,db) => {
-//   if (!err) { console.log('connect to MongoDB'); } 
-//   else { console.log('errLog:',err); }
-
-//   var dbo = db.db("runoob");
-//   var myobj = { name: "菜鸟教程", url: "www.runoob" };
-//   dbo.collection("site").insertOne(myobj, function(err, res) {
-//       if (err) throw err;
-//       console.log("文档插入成功");
-//       db.close();
-//   });
-//   //const collection = Mclient.db("test").collection("devices");
-//   // perform actions on the collection object
-//   Mclient.close();
-// });
-
 const AssistantV2 = require('ibm-watson/assistant/v2');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
@@ -51,33 +27,50 @@ router.post('/line', async function (req, res, next) {
   logger.log('webhook received an event');
   res.status(200).send();
 
-  let targetEvent = req.body.events[0];
-  if (targetEvent.type == 'message') {
+  try {
+    let targetEvent = req.body.events[0];
+    if (targetEvent.type == 'message') {
 
-    if (targetEvent.message.type == 'text') {
+      if (targetEvent.message.type == 'text') {
 
-      // 取出 userId & user 説的文字
-      let userId = targetEvent.source.userId,
-        userSay = targetEvent.message.text;
+        // 取出 userId & user 説的文字
+        let userId = targetEvent.source.userId,
+          userSay = targetEvent.message.text;
 
-      logger.log(userId, 'says:', userSay);
+        logger.log(userId, 'says:', userSay);
 
-      // 取得回覆
-      let result = await AssistantCtl.sendMessage(userId, userSay);
+        // 取得回覆
+        let result = await AssistantCtl.sendMessage(userId, userSay);
 
-      // 將回覆傳回給user
-      replyToLine(targetEvent.replyToken, result);
-      logger.log(userId, 'return message:', result);
+        if (result.success) {
+          //紀錄ＤＢ
+          let document = {
+            timestamp: Date.now(),
+            userId: userId,
+            userSay: userSay,
+            AssistantReturn: result
+          }
+          MongodbCtl.insertOne('LineBot', 'chatLog', document)
+          replyToLine(targetEvent.replyToken, result.message)
+        } else {
+          throw new Exception(result.message);
+        }
 
-      //紀錄ＤＢ
-      let document = {
-        timestamp : Date.now(),
-        userId : userId,
-        userSay : userSay,
-        AssistantReturn : result
+
+        // 將回覆傳回給user
+        replyToLine(targetEvent.replyToken, result);
+        logger.log(userId, 'return message:', result);
+
+
       }
-      MongodbCtl.insertOne('LineBot','chatLog',document)
     }
+  } catch (err) {
+    let replyToken = req.body.targetEvent[0].replyToken;
+    let errMsg = {
+      type: 'text',
+      text: '很抱歉，目前無法為您服務'
+    }
+    replyToLine();
   }
 });
 
@@ -176,13 +169,13 @@ let logger = {
 }
 logger.init('webhook');
 
-function test(){
+async function test() {
   console.log('start initMongodb');
-  let initMongodb = await MongodbCtl.init(); 
+  let initMongodb = await MongodbCtl.init();
   console.log('initMongodb:', initMongodb);
   console.log('start insertResult');
-  let insertResult = await MongodbCtl.insertOne('testDB', 'testCollection', {test: 'test'}); 
+  let insertResult = await MongodbCtl.insertOne('testDB', 'testCollection', { test: 'test' });
   console.log('insertResult:', insertResult);
-  }
+}
 
 test();
